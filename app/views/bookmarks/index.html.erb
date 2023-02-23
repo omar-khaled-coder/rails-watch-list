@@ -1,0 +1,13 @@
+<h1 style="text-align:center;">BOokmarks</h1>
+
+<ol class="event-schedule-area-two bg-color pad100" style="text-align:left;">
+  <% @Bookmarks.each do |bookmark| %>
+    <li class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
+    <%= bookmark.comment %><br>
+    <%= bookmark.movie_id%><br>
+    <%= bookmark.list_id %><br>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to 'add new bookmark', '/bookmarks/new' %>
