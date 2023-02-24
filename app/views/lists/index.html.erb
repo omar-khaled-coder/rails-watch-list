@@ -1,11 +1,23 @@
-<h1 style="text-align:center;">lists</h1>
-
-<ol class="event-schedule-area-two bg-color pad100" style="text-align:left;">
-  <% @lists.each do |list| %>
-    <li class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
-    <%= list.name %><br>
-    </li>
-  <% end %>
-</ol>
-
-<%= link_to 'add new list', '/lists/new' %>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Save any kind of movies</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('https://npr.brightspotcdn.com/dims4/default/0cefce8/2147483647/strip/true/crop/6558x4414+0+0/resize/880x592!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb2%2F88%2F15c02e194204bdd92b248bba2b78%2Fadobestock-239244529.jpeg') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
